@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="2_glass" viewBox="0 0 64 64">
+    <rect x="8" y="8" width="48" height="48" rx="8" fill="#e5e7eb" stroke="#14355c" stroke-width="4"/>
+    <text x="32" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#6b7280">2</text>
+  </symbol>
+  <symbol id="4_jar" viewBox="0 0 64 64">
+    <rect x="8" y="8" width="48" height="48" rx="8" fill="#e5e7eb" stroke="#14355c" stroke-width="4"/>
+    <text x="32" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#6b7280">4</text>
+  </symbol>
+  <symbol id="8_pin" viewBox="0 0 64 64">
+    <rect x="8" y="8" width="48" height="48" rx="8" fill="#e5e7eb" stroke="#14355c" stroke-width="4"/>
+    <text x="32" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#6b7280">8</text>
+  </symbol>
+  <symbol id="16_helmet_blueprint" viewBox="0 0 64 64">
+    <rect x="8" y="8" width="48" height="48" rx="8" fill="#e5e7eb" stroke="#14355c" stroke-width="4"/>
+    <text x="32" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#6b7280">16</text>
+  </symbol>
+  <symbol id="32_drill_truck" viewBox="0 0 64 64">
+    <rect x="8" y="8" width="48" height="48" rx="8" fill="#e5e7eb" stroke="#14355c" stroke-width="4"/>
+    <text x="32" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#6b7280">32</text>
+  </symbol>
+  <symbol id="64_drill_bit" viewBox="0 0 64 64">
+    <rect x="8" y="8" width="48" height="48" rx="8" fill="#e5e7eb" stroke="#14355c" stroke-width="4"/>
+    <text x="32" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#6b7280">64</text>
+  </symbol>
+  <symbol id="128_pipes" viewBox="0 0 64 64">
+    <rect x="8" y="8" width="48" height="48" rx="8" fill="#e5e7eb" stroke="#14355c" stroke-width="4"/>
+    <text x="32" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#6b7280">128</text>
+  </symbol>
+  <symbol id="256_gravel_cement" viewBox="0 0 64 64">
+    <rect x="8" y="8" width="48" height="48" rx="8" fill="#e5e7eb" stroke="#14355c" stroke-width="4"/>
+    <text x="32" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#6b7280">256</text>
+  </symbol>
+  <symbol id="512_pump" viewBox="0 0 64 64">
+    <rect x="8" y="8" width="48" height="48" rx="8" fill="#e5e7eb" stroke="#14355c" stroke-width="4"/>
+    <text x="32" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#6b7280">512</text>
+  </symbol>
+  <symbol id="1024_tap" viewBox="0 0 64 64">
+    <rect x="8" y="8" width="48" height="48" rx="8" fill="#e5e7eb" stroke="#14355c" stroke-width="4"/>
+    <text x="32" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#6b7280">1024</text>
+  </symbol>
+  <symbol id="2048_well" viewBox="0 0 64 64">
+    <rect x="8" y="8" width="48" height="48" rx="8" fill="#e5e7eb" stroke="#14355c" stroke-width="4"/>
+    <text x="32" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#6b7280">2048</text>
+  </symbol>
+</svg>

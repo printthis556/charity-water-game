@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Water 2048 — charity: water</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top chrome -->
+  <div class="chrome">
+    <div class="chrome-dots">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="chrome-title">The mission statement or just charity: water</div>
+    <button class="chrome-menu" aria-label="menu">≡</button>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-logo" aria-label="charity: water logo">CW</div>
+      <p class="hero-copy">
+        This will be a description of charity: water’s mission. (This text should be impactful and attention-grabbing.)
+      </p>
+      <button id="ctaPlay" class="btn btn-primary">Start Game</button>
+    </div>
+  </header>
+
+  <!-- Main content card -->
+  <main class="card">
+    <!-- Left column -->
+    <section class="left">
+      <h1>Water 2048</h1>
+      <p class="sub">Swipe to combine tiles to complete the well</p>
+
+      <div class="row">
+        <button id="howBtn" class="btn">How to Play</button>
+        <button id="newBtn" class="btn">Start Game</button>
+      </div>
+
+      <div class="row">
+        <div class="scorebox">
+          <span>Score</span>
+          <strong id="score">0</strong>
+        </div>
+        <button id="undoBtn" class="btn">Undo</button>
+        <button id="restartBtn" class="btn">Restart</button>
+      </div>
+
+      <div class="row">
+        <div class="scorebox">
+          <span>Best</span>
+          <strong id="best">0</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Board center -->
+    <section class="center">
+      <div id="boardFrame">
+        <div id="boardBg" class="grid"></div>
+        <div id="tiles" class="tiles"></div>
+      </div>
+      <div class="hint">Use arrow keys or swipe</div>
+    </section>
+
+    <!-- Right legend -->
+    <aside class="right">
+      <h2>Tile Story</h2>
+      <ul class="legend">
+        <li data-v="2"><span class="swatch" aria-hidden="true"></span><span class="label">= 2</span></li>
+        <li data-v="4"><span class="swatch" aria-hidden="true"></span><span class="label">= 4</span></li>
+        <li data-v="8"><span class="swatch" aria-hidden="true"></span><span class="label">= 8</span></li>
+        <li data-v="16"><span class="swatch" aria-hidden="true"></span><span class="label">= 16</span></li>
+        <li data-v="32"><span class="swatch" aria-hidden="true"></span><span class="label">= 32</span></li>
+        <li data-v="64"><span class="swatch" aria-hidden="true"></span><span class="label">= 64</span></li>
+        <li data-v="128"><span class="swatch" aria-hidden="true"></span><span class="label">= 128</span></li>
+        <li data-v="256"><span class="swatch" aria-hidden="true"></span><span class="label">= 256</span></li>
+        <li data-v="512"><span class="swatch" aria-hidden="true"></span><span class="label">= 512</span></li>
+        <li data-v="1024"><span class="swatch" aria-hidden="true"></span><span class="label">= 1024</span></li>
+        <li data-v="2048"><span class="swatch" aria-hidden="true"></span><span class="label">= 2048</span></li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- Facts row -->
+  <section class="facts">
+    <div class="fact locked" data-threshold="256">
+      <h3>Fact one</h3><p>Unlocked at 256</p>
+    </div>
+    <div class="fact locked" data-threshold="512">
+      <h3>Fact two</h3><p>Unlocked at 512</p>
+    </div>
+    <div class="fact locked" data-threshold="1024">
+      <h3>Fact three</h3><p>Unlocked at 1024</p>
+    </div>
+  </section>
+
+  <footer class="footer">Footer</footer>
+
+  <!-- Modals -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button id="modalClose" class="modal-x" aria-label="close">×</button>
+      <h3 id="modalTitle">How to Play</h3>
+      <div id="modalBody" class="modal-body">
+        <ol>
+          <li>Use arrow keys or swipe to slide all tiles.</li>
+          <li>Equal tiles merge into the next “story” icon.</li>
+          <li>Reach 2048 to complete the well!</li>
+        </ol>
+      </div>
+      <div class="modal-actions">
+        <button class="btn" id="modalOk">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

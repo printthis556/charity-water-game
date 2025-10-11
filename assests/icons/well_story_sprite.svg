@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<symbol id="2_glass" viewBox="0 0 512 512">
+<rect x="160" y="100" width="192" height="320" rx="24" fill="#F5FBFF" stroke="#14355C" stroke-width="18" />
+<path d="M176 280 C 220 260, 292 300, 336 280 L 336 380 L 176 380 Z" fill="#60A5FA" stroke="#14355C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M176 140 Q 256 120 336 140" fill="none" stroke="#14355C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M196 310 Q 230 296 260 304" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+</symbol>
+<symbol id="4_jar" viewBox="0 0 512 512">
+<rect x="124" y="120" width="264" height="308" rx="36" fill="#F7FCFF" stroke="#14355C" stroke-width="18" />
+<rect x="156" y="80" width="200" height="56" rx="16" fill="#BFC8D2" stroke="#14355C" stroke-width="18" />
+<rect x="160" y="244" width="192" height="84" rx="20" fill="#FFFFFF" stroke="#14355C" stroke-width="18" />
+<path d="M220 282 C 220 268, 244 268, 256 286 C 268 268, 292 268, 292 282 C 292 304, 256 324, 256 324 C 256 324, 220 304, 220 282 Z" fill="#F2C94C" stroke="#14355C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+<circle cx="180" cy="220" r="18" fill="#F2C94C" stroke="#14355C" stroke-width="18" />
+<circle cx="214" cy="208" r="18" fill="#F2C94C" stroke="#14355C" stroke-width="18" />
+<circle cx="260" cy="220" r="18" fill="#F2C94C" stroke="#14355C" stroke-width="18" />
+<circle cx="300" cy="230" r="18" fill="#F2C94C" stroke="#14355C" stroke-width="18" />
+<circle cx="208" cy="330" r="18" fill="#F2C94C" stroke="#14355C" stroke-width="18" />
+<circle cx="260" cy="340" r="18" fill="#F2C94C" stroke="#14355C" stroke-width="18" />
+</symbol>
+<symbol id="8_pin" viewBox="0 0 512 512">
+<path d="M256 100 C 176 100, 116 160, 116 236 C 116 324, 200 374, 244 430 C 252 440, 260 440, 268 430 C 312 374, 396 324, 396 236 C 396 160, 336 100, 256 100 Z" fill="#D8EBFF" stroke="#14355C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M256 156 C 236 196, 220 216, 220 244 C 220 270, 236 288, 256 288 C 276 288, 292 270, 292 244 C 292 216, 276 196, 256 156 Z" fill="#60A5FA" stroke="#14355C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+<ellipse cx="256" cy="438" rx="64" ry="20" fill="#E6F0FF" stroke="#14355C" stroke-width="18" />
+</symbol>
+<symbol id="16_helmet_blueprint" viewBox="0 0 512 512">
+<rect x="260" y="240" width="160" height="140" rx="18" fill="#A7CDFE" stroke="#14355C" stroke-width="18" />
+<rect x="248" y="236" width="24" height="148" rx="10" fill="#85B6FB" stroke="#14355C" stroke-width="18" />
+<path d="M340 268 C 328 292, 320 304, 320 320 C 320 334, 330 344, 340 344 C 350 344, 360 334, 360 320 C 360 304, 352 292, 340 268 Z" fill="#60A5FA" stroke="#14355C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M128 316 C 144 260, 192 228, 256 228 C 320 228, 368 260, 384 316 L 128 316 Z" fill="#F2C94C" stroke="#14355C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+<rect x="120" y="316" width="280" height="48" rx="10" fill="#F2C94C" stroke="#14355C" stroke-width="18" />
+</symbol>
+<symbol id="32_drill_truck" viewBox="0 0 512 512">
+<rect x="128" y="280" width="260" height="100" rx="12" fill="#D8EBFF" stroke="#14355C" stroke-width="18" />
+<rect x="110" y="240" width="120" height="80" rx="12" fill="#D8EBFF" stroke="#14355C" stroke-width="18" />
+<rect x="130" y="260" width="70" height="36" rx="6" fill="#FFFFFF" stroke="#14355C" stroke-width="18" />
+<circle cx="180" cy="392" r="36" fill="#FFFFFF" stroke="#14355C" stroke-width="18" />
+<circle cx="180" cy="392" r="18" fill="#D8EBFF" stroke="#14355C" stroke-width="18" />
+<circle cx="330" cy="392" r="36" fill="#FFFFFF" stroke="#14355C" stroke-width="18" />
+<circle cx="330" cy="392" r="18" fill="#D8EBFF" stroke="#14355C" stroke-width="18" />
+<rect x="350" y="170" width="24" height="210" rx="8" fill="#D8EBFF" stroke="#14355C" stroke-width="18" />
+<rect x="372" y="210" width="20" height="140" rx="8" fill="#D8EBFF" stroke="#14355C" stroke-width="18" />
+<polygon points="392,350 416,380 368,380" fill="#BFC8D2" stroke="#14355C" stroke-width="18" stroke-linejoin="round" />
+</symbol>
+<symbol id="64_drill_bit" viewBox="0 0 512 512">
+<rect x="80" y="360" width="352" height="90" rx="16" fill="#A67C52" stroke="#14355C" stroke-width="18" />
+<rect x="80" y="450" width="352" height="40" rx="12" fill="#8C6744" stroke="#14355C" stroke-width="18" />
+<line x1="256" y1="160" x2="256" y2="350" stroke="#BFC8D2" stroke-width="28" stroke-linecap="round" />
+<polygon points="256,350 298,408 214,408" fill="#BFC8D2" stroke="#14355C" stroke-width="18" stroke-linejoin="round" />
+</symbol>
+<symbol id="128_pipes" viewBox="0 0 512 512">
+<rect x="108" y="240" width="296" height="60" rx="28" fill="#60A5FA" stroke="#14355C" stroke-width="18" />
+<rect x="108" y="340" width="296" height="60" rx="28" fill="#60A5FA" stroke="#14355C" stroke-width="18" />
+<rect x="240" y="228" width="36" height="84" rx="12" fill="#0EA5E9" stroke="#14355C" stroke-width="12" />
+<rect x="240" y="328" width="36" height="84" rx="12" fill="#0EA5E9" stroke="#14355C" stroke-width="12" />
+</symbol>
+<symbol id="256_gravel_cement" viewBox="0 0 512 512">
+<polygon points="136,392 256,300 376,392" fill="#E5E7EB" stroke="#14355C" stroke-width="18" stroke-linejoin="round" />
+<circle cx="176" cy="340" r="6" fill="#8C6744" stroke="#8C6744" stroke-width="2" />
+<circle cx="194" cy="351" r="6" fill="#8C6744" stroke="#8C6744" stroke-width="2" />
+<circle cx="212" cy="362" r="6" fill="#8C6744" stroke="#8C6744" stroke-width="2" />
+<circle cx="230" cy="373" r="6" fill="#8C6744" stroke="#8C6744" stroke-width="2" />
+<circle cx="248" cy="384" r="6" fill="#8C6744" stroke="#8C6744" stroke-width="2" />
+<circle cx="266" cy="395" r="6" fill="#8C6744" stroke="#8C6744" stroke-width="2" />
+<circle cx="284" cy="346" r="6" fill="#8C6744" stroke="#8C6744" stroke-width="2" />
+<circle cx="302" cy="357" r="6" fill="#8C6744" stroke="#8C6744" stroke-width="2" />
+<circle cx="320" cy="368" r="6" fill="#8C6744" stroke="#8C6744" stroke-width="2" />
+<circle cx="178" cy="379" r="6" fill="#8C6744" stroke="#8C6744" stroke-width="2" />
+<rect x="120" y="220" width="272" height="80" rx="24" fill="#F2C94C" stroke="#14355C" stroke-width="18" />
+<rect x="170" y="248" width="172" height="36" rx="16" fill="#FFFFFF" stroke="#14355C" stroke-width="18" />
+<path d="M296 254 C 288 270, 282 280, 282 292 C 282 300, 288 306, 296 306 C 304 306, 310 300, 310 292 C 310 280, 304 270, 296 254 Z" fill="#60A5FA" stroke="#14355C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+</symbol>
+<symbol id="512_pump" viewBox="0 0 512 512">
+<rect x="208" y="420" width="192" height="28" rx="10" fill="#E5E7EB" stroke="#14355C" stroke-width="18" />
+<rect x="248" y="260" width="72" height="160" rx="16" fill="#0EA5E9" stroke="#14355C" stroke-width="18" />
+<rect x="320" y="300" width="120" height="28" rx="12" fill="#0EA5E9" stroke="#14355C" stroke-width="18" />
+<rect x="420" y="320" width="28" height="64" rx="10" fill="#0EA5E9" stroke="#14355C" stroke-width="18" />
+<line x1="284" y1="260" x2="200" y2="200" stroke="#0EA5E9" stroke-width="22" stroke-linecap="round" />
+<line x1="200" y1="200" x2="168" y2="230" stroke="#0EA5E9" stroke-width="22" stroke-linecap="round" />
+<circle cx="436" cy="380" r="10" fill="#60A5FA" stroke="#60A5FA" stroke-width="6" />
+</symbol>
+<symbol id="1024_tap" viewBox="0 0 512 512">
+<rect x="220" y="420" width="200" height="30" rx="10" fill="#E5E7EB" stroke="#14355C" stroke-width="18" />
+<rect x="320" y="260" width="32" height="160" rx="12" fill="#BFC8D2" stroke="#14355C" stroke-width="18" />
+<rect x="352" y="260" width="120" height="30" rx="12" fill="#BFC8D2" stroke="#14355C" stroke-width="18" />
+<rect x="352" y="290" width="40" height="130" rx="16" fill="#60A5FA" stroke="#60A5FA" stroke-width="0" />
+<circle cx="372" cy="430" r="18" fill="#60A5FA" stroke="#60A5FA" stroke-width="0" />
+</symbol>
+<symbol id="2048_well" viewBox="0 0 512 512">
+<rect x="160" y="430" width="240" height="28" rx="10" fill="#E5E7EB" stroke="#14355C" stroke-width="18" />
+<polygon points="180,280 280,230 380,280" fill="#F2C94C" stroke="#14355C" stroke-width="18" stroke-linejoin="round" />
+<rect x="192" y="280" width="24" height="150" rx="8" fill="#BFC8D2" stroke="#14355C" stroke-width="18" />
+<rect x="344" y="280" width="24" height="150" rx="8" fill="#BFC8D2" stroke="#14355C" stroke-width="18" />
+<rect x="268" y="320" width="48" height="130" rx="14" fill="#0EA5E9" stroke="#14355C" stroke-width="18" />
+<rect x="316" y="360" width="72" height="24" rx="12" fill="#0EA5E9" stroke="#14355C" stroke-width="18" />
+<rect x="376" y="376" width="20" height="60" rx="10" fill="#0EA5E9" stroke="#14355C" stroke-width="18" />
+<rect x="372" y="430" width="40" height="10" rx="6" fill="#60A5FA" stroke="#60A5FA" stroke-width="0" />
+</symbol>
+</svg>
