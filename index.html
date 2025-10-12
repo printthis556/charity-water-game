@@ -12,12 +12,12 @@
     <div class="chrome-dots">
       <span></span><span></span><span></span>
     </div>
-    <div class="chrome-title">Because clean water changes everything</div>
+    <div class="chrome-title">Water changes everything—let’s prove it.</div>
     <button class="chrome-menu" aria-label="menu">≡</button>
   </div>
 
   <!-- Hero -->
-  <header class="hero">
+  <header class="hero" style="background: url('assests/icons/cw_Selects_16x9_32.jpg') center/cover no-repeat;">
     <div class="hero-inner">
       <div class="hero-logo" aria-label="charity: water logo">
         <img src="assests/icons/cw_vertical_white (1).jpg" alt="charity: water logo" style="width:100%;height:100%;object-fit:contain;" />
@@ -57,7 +57,7 @@
         </div>
       </div>
         <div class="row donate-row">
-          <div style="width:100%; display:flex; flex-direction:column; align-items:center;">
+          <div class="donate-card" style="background:#fff7e1; border:1px solid #e5e7eb; border-radius:12px; padding:18px 12px; width:100%; display:flex; flex-direction:column; align-items:center; box-shadow:0 2px 8px rgba(0,0,0,.04);">
             <div class="donate-message" style="text-align:center; margin-bottom:12px; color:#333; font-size:15px;">
               <strong>Ready to take action?</strong><br>
               There are lots of great ways to help us end the global water crisis.<br>
@@ -99,17 +99,196 @@
   <!-- Facts row -->
   <section class="facts">
     <div class="fact locked" data-threshold="256">
-      <h3>Fact one</h3><p>Unlocked at 256</p>
+      <h3>Fact one</h3>
+      <p class="muted">Unlocked at 256</p>
+      <div class="fact-content" aria-live="polite"></div>
     </div>
+
     <div class="fact locked" data-threshold="512">
-      <h3>Fact two</h3><p>Unlocked at 512</p>
+      <h3>Fact two</h3>
+      <p class="muted">Unlocked at 512</p>
+      <div class="fact-content" aria-live="polite"></div>
     </div>
+
     <div class="fact locked" data-threshold="1024">
-      <h3>Fact three</h3><p>Unlocked at 1024</p>
+      <h3>Fact three</h3>
+      <p class="muted">Unlocked at 1024</p>
+      <div class="fact-content" aria-live="polite"></div>
     </div>
   </section>
 
-  <footer class="footer">Footer</footer>
+  <!-- Newsletter card -->
+  <section class="newsletter-card" aria-labelledby="nlTitle">
+    <div class="newsletter-card__inner">
+      <div class="newsletter-card__intro">
+        <div class="nl-icon" aria-hidden="true">💌</div>
+        <h3 id="nlTitle">Add Impact To Your Inbox</h3>
+        <p>Get our emails to stay in the know.</p>
+      </div>
+
+      <form id="newsletterForm" class="newsletter-card__form" novalidate>
+        <div class="nl-grid">
+          <div class="nl-field">
+            <label for="nlFirst">First Name</label>
+            <input id="nlFirst" name="firstName" type="text" autocomplete="given-name" />
+          </div>
+
+          <div class="nl-field">
+            <label for="nlLast">Last Name</label>
+            <input id="nlLast" name="lastName" type="text" autocomplete="family-name" />
+          </div>
+
+          <div class="nl-field nl-span-2">
+            <label for="nlEmail">Email</label>
+            <input id="nlEmail" name="email" type="email" required autocomplete="email" />
+          </div>
+
+          <fieldset class="nl-field nl-span-2 nl-bday">
+            <legend>Birthday (optional)</legend>
+            <div class="nl-bday-row">
+              <select id="nlMonth" aria-label="Month">
+                <option value="" selected>MM</option>
+                <option value="1">01</option><option value="2">02</option>
+                <option value="3">03</option><option value="4">04</option>
+                <option value="5">05</option><option value="6">06</option>
+                <option value="7">07</option><option value="8">08</option>
+                <option value="9">09</option><option value="10">10</option>
+                <option value="11">11</option><option value="12">12</option>
+              </select>
+
+              <select id="nlDay" aria-label="Day">
+                <option value="" selected>DD</option>
+                <!-- 1–31; trimmed in JS based on month/year -->
+                <!-- JS will populate these options -->
+              </select>
+
+              <select id="nlYear" aria-label="Year">
+                <option value="" selected>YYYY</option>
+                <!-- years will be populated by JS -->
+              </select>
+            </div>
+          </fieldset>
+
+          <label class="nl-reminder nl-span-2">
+            <input id="nlReminder" type="checkbox" disabled />
+            <span>Set a reminder to pledge my birthday and help change lives</span>
+          </label>
+
+          <div class="nl-actions nl-span-2">
+            <button type="submit" class="btn btn-primary nl-submit">Subscribe</button>
+          </div>
+
+          <p class="nl-legal small nl-span-2">
+            By clicking “Subscribe”, you are submitting your information to charity: water.
+          </p>
+          <p class="nl-recaptcha small muted nl-span-2">
+            This site is protected by reCAPTCHA and the Google
+            <a href="#" rel="noopener">Privacy Policy</a> and
+            <a href="#" rel="noopener">Terms of Service</a> apply.
+          </p>
+
+          <div id="nlStatus" class="nl-status nl-span-2" aria-live="polite"></div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <footer class="cw-footer" role="contentinfo">
+    <div class="cw-footer__inner">
+
+      <!-- 4 columns -->
+      <nav class="cw-footer__links" aria-label="Footer">
+        <div>
+          <h4>take action</h4>
+          <ul>
+            <li><a href="#">give</a></li>
+            <li><a href="#">join the spring</a></li>
+            <li><a href="#">give to a fundraiser</a></li>
+            <li><a href="#">give in someone's honor</a></li>
+            <li><a href="#">sponsor a community</a></li>
+            <li><a href="#">legacy giving</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>get involved</h4>
+          <ul>
+            <li><a href="#">create an account</a></li>
+            <li><a href="#">fundraise</a></li>
+            <li><a href="#">tiny heroes</a></li>
+            <li><a href="#">students &amp; teachers</a></li>
+            <li><a href="#">stream for us</a></li>
+            <li><a href="#">experience lab</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>get to know us</h4>
+          <ul>
+            <li><a href="#">our work</a></li>
+            <li><a href="#">100% model</a></li>
+            <li><a href="#">see our financials</a></li>
+            <li><a href="#">meet the founder</a></li>
+            <li><a href="#">meet the executive team</a></li>
+            <li><a href="#">careers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>connect</h4>
+          <ul>
+            <li><a href="#">contact us</a></li>
+            <li><a href="#">help center</a></li>
+            <li><a href="#">request a speaker</a></li>
+            <li><a href="#">brand partnerships</a></li>
+            <li><a href="#">shop our store</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <hr class="cw-footer__rule" />
+
+      <!-- social + currency -->
+      <div class="cw-footer__bar">
+        <ul class="cw-footer__social">
+          <li><a href="#" aria-label="Twitter/X" class="ico ico-x"><img src="assests/icons/logo-black.png" alt="Twitter/X" style="width:20px;height:20px;display:inline-block;vertical-align:middle;" /></a></li>
+          <li><a href="#" aria-label="Facebook" class="ico ico-fb"><img src="assests/icons/black facebook logo.png" alt="Facebook" style="width:20px;height:20px;display:inline-block;vertical-align:middle;" /></a></li>
+          <li><a href="#" aria-label="Instagram" class="ico ico-ig"><img src="assests/icons/Instagram_Glyph_Black.png" alt="Instagram" style="width:20px;height:20px;display:inline-block;vertical-align:middle;" /></a></li>
+          <li><a href="#" aria-label="TikTok" class="ico ico-tt"><img src="assests/icons/TikTok_Icon_Black_Square.png" alt="TikTok" style="width:20px;height:20px;display:inline-block;vertical-align:middle;" /></a></li>
+          <li><a href="#" aria-label="YouTube" class="ico ico-yt"><img src="assests/icons/yt_icon_almostblack_digital.png" alt="YouTube" style="width:20px;height:20px;display:inline-block;vertical-align:middle;" /></a></li>
+          <li><a href="#" aria-label="LinkedIn" class="ico ico-in"><img src="assests/icons/InBug-Black.png" alt="LinkedIn" style="width:20px;height:20px;display:inline-block;vertical-align:middle;" /></a></li>
+        </ul>
+
+        <label class="cw-footer__currency">
+          <span class="flag" aria-hidden="true">🇺🇸</span>
+          <select id="currencySelect" aria-label="Currency">
+            <option selected>United States dollar</option>
+            <option>Euro</option>
+            <option>British pound</option>
+            <option>Canadian dollar</option>
+            <option>Australian dollar</option>
+          </select>
+        </label>
+      </div>
+
+      <!-- privacy / model / badges -->
+      <a class="cw-footer__privacy" href="#">privacy policy</a>
+      <p class="cw-footer__np small">charity: water is a 501(c)(3) nonprofit organization.</p>
+      <p class="cw-footer__hundred small">
+        <a href="#">100% of public donations go directly to fund clean water projects.</a>
+      </p>
+
+      <div class="cw-footer__badges" aria-label="Trust badges">
+        <span class="badge">Guidestar</span>
+        <span class="badge">Charity Navigator</span>
+        <span class="badge">Top-Rated</span>
+        <span class="badge">BBB</span>
+      </div>
+
+      <!-- legal block -->
+      <p class="cw-footer__legal small muted">
+        © <span id="cwYear"></span> charity: water | Donation Processing Center, 230 Franklin Rd., Ste. 11-1,
+        Franklin, TN 37064 | charity: water is a US 501(c)(3) public charity, EIN 22-3936753.
+        Charity Global UK Limited is a dual-qualified charity registered in England and Wales, charity number 1169228.
+      </p>
+    </div>
+  </footer>
 
   <!-- Modals -->
   <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
