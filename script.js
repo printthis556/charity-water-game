@@ -696,23 +696,58 @@ window.addEventListener('keydown', (e)=>{
   if(k==='ArrowDown'||k==='s') move(1);
 });
 
-// Touch
-let start=null;
-tilesEl.addEventListener('touchstart',(e)=>{
-  if(e.touches.length===1){
-    start={x:e.touches[0].clientX,y:e.touches[0].clientY};
+// Touch & pointer swipe handling (works on phones)
+let start = null;
+// Use the board container as the gesture surface so swipes register
+// even if the user starts outside the tiles overlay.
+boardBg.addEventListener('touchstart', (e) => {
+  if (e.touches.length === 1) {
+    start = { x: e.touches[0].clientX, y: e.touches[0].clientY };
   }
-},{passive:true});
-tilesEl.addEventListener('touchend',(e)=>{
-  if(!start) return;
+}, { passive: true });
+
+// Prevent the page from scrolling while the user is actively swiping on the board.
+boardBg.addEventListener('touchmove', (e) => {
+  if (!start) return;
+  const dx = e.touches[0].clientX - start.x;
+  const dy = e.touches[0].clientY - start.y;
+  // if the user has started a directional gesture, prevent default scrolling
+  if (Math.abs(dx) > 8 || Math.abs(dy) > 8) e.preventDefault();
+}, { passive: false });
+
+boardBg.addEventListener('touchend', (e) => {
+  if (!start) return;
   const dx = e.changedTouches[0].clientX - start.x;
   const dy = e.changedTouches[0].clientY - start.y;
   const ax = Math.abs(dx), ay = Math.abs(dy);
-  if(Math.max(ax,ay) > 24){
-    if(ax>ay) move(dx<0?0:2); else move(dy<0?1:3);
+  if (Math.max(ax, ay) > 24) {
+    if (ax > ay) move(dx < 0 ? 0 : 2);
+    else move(dy < 0 ? 1 : 3);
   }
-  start=null;
+  start = null;
 });
+
+boardBg.addEventListener('touchcancel', () => { start = null; });
+
+// Pointer events fallback (handles stylus and some hybrid devices)
+if (window.PointerEvent) {
+  boardBg.addEventListener('pointerdown', (e) => {
+    if (e.isPrimary) start = { x: e.clientX, y: e.clientY };
+  }, { passive: true });
+
+  boardBg.addEventListener('pointerup', (e) => {
+    if (!start) return;
+    const dx = e.clientX - start.x;
+    const dy = e.clientY - start.y;
+    const ax = Math.abs(dx), ay = Math.abs(dy);
+    if (Math.max(ax, ay) > 24) {
+      if (ax > ay) move(dx < 0 ? 0 : 2);
+      else move(dy < 0 ? 1 : 3);
+    }
+    start = null;
+  });
+  boardBg.addEventListener('pointercancel', () => { start = null; });
+}
 
 // Buttons
 howBtn.onclick = ()=> showModal('How to Play',
