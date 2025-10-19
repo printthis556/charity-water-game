@@ -405,6 +405,10 @@
   border-radius: 8px; color:#0b1220;
 }
 
+/* Tile icon wrapper: holds raster <img> and SVG fallback stacked */
+.tile-icon{ display:flex; align-items:center; justify-content:center; width:100%; height:60%; position:relative }
+.tile-icon .tile-img{ max-width:72%; max-height:100%; height:auto; display:block; z-index:2 }
+.tile-icon .tile-svg{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:1; width:60%; height:auto; opacity:.98 }
 /* ensure contrast on darker tiles */
 .tile[data-v="512"] .num,
 .tile[data-v="1024"] .num,
@@ -429,6 +433,9 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+/* Legend raster image + svg fallback sizing */
+.legend .swatch img.legend-img{ display:block; width:22px; height:20px; object-fit:contain; margin:auto; }
+.legend .swatch svg.legend-svg{ display:block; width:22px; height:20px; margin:auto; opacity:0.96 }
 .legend .label { font-size: 14px; }
 /* Tile = vertical stack: image on top, number below */
 .tile {
@@ -447,6 +454,34 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+/* Slightly smaller tiles (scale factor) — placed at the end so it overrides
+   earlier rules. Adjust --tile-scale to make tiles bigger/smaller. */
+:root {
+  --tile-scale: 0.88;
+}
+.tile {
+  width: calc((100% - 10px*2 - 12px*3)/4 * var(--tile-scale)) !important;
+  aspect-ratio: 1 / 1 !important;
+}
+
+/* Responsive tile scaling: adjust the --tile-scale variable per viewport
+   so tiles keep good visual density on small and large screens. */
+@media (max-width: 420px) {
+  :root { --tile-scale: 0.72; }   /* small phones — more padding around tiles */
+}
+@media (min-width: 421px) and (max-width: 768px) {
+  :root { --tile-scale: 0.80; }   /* small tablets / large phones */
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root { --tile-scale: 0.87; }   /* tablets */
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  :root { --tile-scale: 0.92; }   /* small desktops / large tablets */
+}
+@media (min-width: 1441px) {
+  :root { --tile-scale: 0.98; }   /* large desktops — near full size */
 }
 
 /* Icon inside the tile */
@@ -590,9 +625,35 @@
 
 *{box-sizing:border-box}
 html,body{height:100%}
+/* Proxima Nova: preferred site font. This file includes an optional
+   @font-face wiring that expects font files to be placed at
+   /assets/fonts/ProximaNova-*.{woff2,woff}. You must self-host the
+   font files or use a licensed CDN. Remove the @font-face block if
+   you provide the font elsewhere (e.g. Adobe Fonts / Typekit). */
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: local('Proxima Nova'),
+       url('/assets/fonts/ProximaNova-Regular.woff2') format('woff2'),
+       url('/assets/fonts/ProximaNova-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: local('Proxima Nova Bold'),
+       url('/assets/fonts/ProximaNova-Bold.woff2') format('woff2'),
+       url('/assets/fonts/ProximaNova-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 body{
   margin:0; background:#fff7e1; color:var(--fg);
-  font-family: system-ui, -apple-system, Segoe UI, Inter, Arial, sans-serif;
+  /* Use Proxima Nova when available, fall back to Inter/system UI */
+  font-family: 'Proxima Nova', Inter, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
   display:flex; flex-direction:column;
 }
 
@@ -670,6 +731,64 @@ body{
 }
 .left .sub{margin:0 0 14px;color:var(--muted)}
 .left .row{display:flex;gap:12px;align-items:center;margin:8px 0}
+.mode-toggle input{width:18px;height:18px}
+.mode-toggle{margin-left:8px;}
+.mode-card{
+  background:#bf6c46; /* match scorebox color */
+  color: #fff;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:8px 10px; /* match .scorebox */
+  display:inline-flex;
+  align-items:center;
+}
+.mode-card input{width:18px;height:18px}
+/* Ensure label text inside the mode card is white (overrides inline styles) */
+.mode-card span{ color: #fff !important; }
+.mode-card input:focus{ outline:2px solid rgba(255,255,255,.18); outline-offset:2px; }
+
+/* Confetti pieces */
+.confetti-wrap .confetti-piece{
+  position:absolute; border-radius:2px; will-change:transform,opacity; transform-origin:center;
+  animation:confetti-fall 1.8s cubic-bezier(.2,.8,.2,1) forwards;
+}
+.confetti-wrap.confetti-finish .confetti-piece{ animation-name:confetti-fade; }
+
+@keyframes confetti-fall{
+  0%{ transform: translateY(-10vh) rotate(0) scale(1); opacity:1; }
+  60%{ transform: translateY(60vh) rotate(240deg) scale(1.1); }
+  100%{ transform: translateY(120vh) rotate(540deg) scale(.9); opacity:0.02; }
+}
+@keyframes confetti-fade{
+  to{ opacity:0; transform: translateY(140vh) scale(.6); }
+}
+
+/* Modal badge buttons */
+.btn{ display:inline-block; padding:.5rem .8rem; border-radius:8px; background:#0b74b9; color:#fff; text-decoration:none; border:0; cursor:pointer; }
+.btn.btn-secondary{ background:transparent; color:var(--text); border:1px solid rgba(0,0,0,0.06); }
+.btn:focus{ outline:2px solid rgba(11,116,185,0.28); outline-offset:2px; }
+
+/* Developer test controls (QA helpers) */
+.dev-row{ align-items:center; gap:.5rem; }
+.dev-row select{ font-size:14px }
+.dev-row .btn{ padding:.4rem .6rem; font-size:14px }
+
+/* Make dev controls slightly visually distinct */
+.dev-row{ opacity:0.95; }
+/* match scorebox sizing so the card aligns visually */
+.mode-card{ min-width:110px }
+
+/* Hide developer/test controls from production UI while keeping the
+   markup and JS intact for QA. Remove or toggle this rule during
+   development to reveal the controls. */
+.dev-row,
+#testPreset,
+#testApplyBtn {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
 .donate-row {
   margin-top: auto !important;
   justify-content: center;
@@ -750,8 +869,8 @@ body{
 /* Right legend */
 .right{background:#f4f6f9;border:1px solid var(--line);border-radius:10px;padding:12px}
 .right h2{margin:4px 0 8px;font-size:16px}
-.legend{list-style:none;margin:0;padding:0;display:grid;gap:6px}
-.legend li{display:flex;align-items:center;gap:10px}
+.legend{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.legend li{display:flex;align-items:center;gap:14px}
 .swatch{display:inline-block;width:28px;height:20px;border-radius:6px;border:1px solid var(--line);background:#fff}
 .swatch[data-v="2"]{background:var(--t2)} .swatch[data-v="4"]{background:var(--t4)} .swatch[data-v="8"]{background:var(--t8)}
 .swatch[data-v="16"]{background:var(--t16)} .swatch[data-v="32"]{background:var(--t32)} .swatch[data-v="64"]{background:var(--t64)}
@@ -782,4 +901,62 @@ body{
   .center{order:1}
   .facts{grid-template-columns:1fr}
 }
+
+/* Page-level responsive scaling (visual "zoom out" on very small screens).
+   We use a CSS variable --page-scale to make fine tuning easy. Scaling is
+   applied to the main .card so the entire UI becomes smaller on narrow viewports. */
+:root{ --page-scale: 1; }
+.card{
+  transform-origin: top center;
+  transform: scale(var(--page-scale));
+  transition: transform .18s ease;
+}
+
+@media (max-width: 420px){
+  :root{ --page-scale: 0.86; }
+}
+@media (max-width: 380px){
+  :root{ --page-scale: 0.80; }
+}
+@media (max-width: 340px){
+  :root{ --page-scale: 0.75; }
+}
+
+/* When scaled down, reduce top margin so the card stays visible without
+   excessive whitespace on short screens. */
+@media (max-width: 420px){
+  body{ padding-top:8px }
+  .card{ margin-top: 6px; }
+}
+
+/* ===== Fix: ensure tiles are positioned relative to the grid ===== */
+/* make the grid the positioning context and let .tiles fill it entirely */
+.grid { position: relative; }
+.tiles { position: absolute; inset: 0; pointer-events: none; }
+/* tile sizing will be set by JS to exactly match grid cell size, this
+  keeps tiles pixel-aligned and centered inside each grid cell */
+.tile { box-sizing: border-box; }
+
+/* Blocker tile (hard mode) — make it visually distinct and let its image
+   cover the entire tile area. */
+.tile.blocker {
+  background-color: #BF6C46;
+  border-color: rgba(0,0,0,0.08);
+  color: #fff;
+}
+.tile.blocker .tile-icon {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.tile.blocker .tile-img,
+.tile.blocker .tile-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.tile.blocker .tile-img { object-fit: cover; }
+.tile.blocker .tile-svg { object-fit: cover; opacity: .98; }
 

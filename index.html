@@ -55,6 +55,24 @@
           <span>Best</span>
           <strong id="best">0</strong>
         </div>
+        <div class="mode-card">
+          <label style="display:flex;align-items:center;gap:10px;">
+            <input id="modeToggle" type="checkbox" aria-label="Enable hard mode" />
+            <span style="font-size:14px;color:var(--muted);">Hard mode</span>
+          </label>
+        </div>
+      </div>
+      <!-- Developer test controls (visible for QA) -->
+      <div class="row dev-row" aria-hidden="false" style="margin-top:8px;">
+        <label style="display:flex;gap:.5rem;align-items:center;width:100%;">
+          <select id="testPreset" aria-label="Test preset" style="flex:1;padding:.4rem;border-radius:8px;border:1px solid rgba(0,0,0,.06)">
+            <option value="win2048">Immediate 2048 (win)</option>
+            <option value="two1024">Two 1024 tiles (merge to win)</option>
+            <option value="nearWin">Near win (1024 + others)</option>
+            <option value="full2048">Full board of 2048</option>
+          </select>
+          <button id="testApplyBtn" class="btn" type="button">Apply Test</button>
+        </label>
       </div>
         <div class="row donate-row">
           <div class="donate-card" style="background:#fff7e1; border:1px solid #e5e7eb; border-radius:12px; padding:18px 12px; width:100%; display:flex; flex-direction:column; align-items:center; box-shadow:0 2px 8px rgba(0,0,0,.04);">
@@ -71,8 +89,9 @@
     <!-- Board center -->
     <section class="center">
       <div id="boardFrame">
-        <div id="boardBg" class="grid"></div>
-        <div id="tiles" class="tiles"></div>
+        <div id="boardBg" class="grid">
+          <div id="tiles" class="tiles"></div>
+        </div>
       </div>
       <div class="hint">Use arrow keys or swipe</div>
     </section>
