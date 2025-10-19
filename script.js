@@ -720,9 +720,9 @@ boardBg.addEventListener('touchend', (e) => {
   const dx = e.changedTouches[0].clientX - start.x;
   const dy = e.changedTouches[0].clientY - start.y;
   const ax = Math.abs(dx), ay = Math.abs(dy);
-  if (Math.max(ax, ay) > 24) {
+    if (Math.max(ax, ay) > 24) {
     if (ax > ay) move(dx < 0 ? 0 : 2);
-    else move(dy < 0 ? 1 : 3);
+    else move(dy < 0 ? 3 : 1);
   }
   start = null;
 });
@@ -742,7 +742,7 @@ if (window.PointerEvent) {
     const ax = Math.abs(dx), ay = Math.abs(dy);
     if (Math.max(ax, ay) > 24) {
       if (ax > ay) move(dx < 0 ? 0 : 2);
-      else move(dy < 0 ? 1 : 3);
+      else move(dy < 0 ? 3 : 1);
     }
     start = null;
   });
